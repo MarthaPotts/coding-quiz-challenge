@@ -1,0 +1,18 @@
+#intro {
+    border: 2px solid purple; 
+    border-radius: 5px; 
+}
+
+#outro {
+    border: 2px solid purple; 
+    border-radius: 5px; 
+}
+
+#start {
+    text-align: center;
+}
+
+.hide {
+    display: none; 
+}
+
