@@ -16,6 +16,9 @@ let question = document.getElementById("title");
 let choices = document.getElementById("choices"); 
 //answers /response 
 let rightOrWrong = document.getElementById("response"); 
+let currentQuestionIndex = 0; 
+let time = questions.length * 15; 
+// let timerId; 
 
 
 //end page 
@@ -130,6 +133,6 @@ function checkForEnter(event) {
     }
 }
 
-submitBtn.onclick = saveHighscore; 
+submitBtn.onclick = saveHighScore; 
 startBtn.onclick = startQuiz; 
 initials.onkeyup = checkForEnter; 

@@ -1,6 +1,6 @@
 # coding-quiz-challenge
 
-##A timed coding quiz with multiple choice questions! Test your knowledge! 
+## A timed coding quiz with multiple choice questions! Test your knowledge  
 
 Runs in the browser
 
