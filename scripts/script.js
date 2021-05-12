@@ -32,8 +32,8 @@ let initials = document.getElementById("initials");
 let secondsLeft = 75; 
 function setTime() {
     var timerInterval = setInterval(function(){
-        secondsLeft; 
-        timerEl.textContent = "time left " + secondsLeft; 
+        secondsLeft--; 
+        timerEl.textContent = "time left: " + secondsLeft; 
         if(secondsLeft === 0) {
             clearInterval(timerInterval); 
         }
@@ -46,7 +46,8 @@ startBtn.addEventListener("click", function() {
 }); 
 
 function startQuiz() {
-    intro.style.display = "none"; 
+    intro.style.display = "none";
+    questionDisplay.style.display = "flex";  
     setTime(); 
     displayQuestion(); 
 }
@@ -108,31 +109,31 @@ function clockTick() {
     }
 }
 
-function saveHighScore() {
-    //get input value 
-    let initials = initials.value.trim(); 
-    if (initials !== "") {
-        //get score 
-        var highscores = JSON.parse(window.localStorage.getItem( "highscores")); 
-        //format new score for current user 
-        var newScore = {
-            score: time, 
-            initials: initials
-        }; 
-        //save to LS 
-        highscores.push(newScore); 
-        window.localStorage.setItem( "highscores", JSON.stringify( highscores ));
-        //html page 
-        window.location.href = "highscores.html"; 
-    }
-} 
+// function saveHighScore() {
+//     //get input value 
+//     let initials = initials.value.trim(); 
+//     if (initials !== "") {
+//         //get score 
+//         var highscores = JSON.parse(window.localStorage.getItem( "highscores")); 
+//         //format new score for current user 
+//         var newScore = {
+//             score: time, 
+//             initials: initials
+//         }; 
+//         //save to LS 
+//         highscores.push(newScore); 
+//         window.localStorage.setItem( "highscores", JSON.stringify( highscores ));
+//         //html page 
+//         window.location.href = "highscores.html"; 
+//     }
+// } 
 
-function checkForEnter(event) {
-    if (event.key === "Enter") {
-        saveHighScore(); 
-    }
-}
+// function checkForEnter(event) {
+//     if (event.key === "Enter") {
+//         saveHighScore(); 
+//     }
+// }
 
-submitBtn.onclick = saveHighScore; 
+// submitBtn.onclick = saveHighScore; 
 startBtn.onclick = startQuiz; 
-initials.onkeyup = checkForEnter; 
+// initials.onkeyup = checkForEnter; 
