@@ -64,13 +64,11 @@ function answerClick() {
 
   if (q == 5) {
     stopQuiz();
-    console.log(time);
-    // finalScoreEl.innerHTML = time;  
+    console.log(time);  
   } else {
     q++;
     displayQuestion();
-    console.log(time);
-    // finalScoreEl.innerHTML = time;  
+    console.log(time);  
   }
 }
 
@@ -92,9 +90,7 @@ function tickTock() {
     stopQuiz();
   }
 }
-console.log(time);
-// let finalScoreEl = document.querySelector("#finalScore");
-// finalScoreEl.innerHTML = time;
+console.log(time); 
 initialsEl = document.querySelector("#initials");
 
 function saveHighScore() {
@@ -141,6 +137,7 @@ function getHighScores() {
 
 function clearScores() {
   window.localStorage.removeItem("highscores");
+  window.location.reload(); 
 }
 let clear = document.querySelector("#clear");
 clear.addEventListener("click", clearScores);
