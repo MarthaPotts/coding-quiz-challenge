@@ -1,75 +1,76 @@
 #intro {
-    border: 2px solid purple; 
-    border-radius: 5px; 
-    padding: 5px; 
-    text-align: center;
-    margin: 10px;  
+  border: 2px solid purple;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  margin: 10px;
 }
 
 #outro {
-    border: 2px solid purple; 
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px; 
-    padding-left: 40%;
-    display: none;     
+  border: 2px solid purple;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding-left: 40%;
+  display: none;
 }
 
 #start {
-    text-align: center;
+  text-align: center;
 }
 #display-question {
-    display: flex; 
-    flex-direction: column;
-    border: solid 2px purple; 
-    border-radius: 5px;
-    margin: 10px; 
-    display: none;    
+  display: flex;
+  flex-direction: column;
+  border: solid 2px purple;
+  border-radius: 5px;
+  margin: 10px;
+  display: none;
 }
 #title {
-    display: flex;
-    justify-content: center;   
+  display: flex;
+  justify-content: center;
 }
 #choices {
-    display: flex; 
-    flex-direction: column;
-    margin: 10px; 
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
 }
 .container {
-    display: flex;
-    margin: 10px;
-    align-items: flex-end;
-    justify-content: space-between; 
+  display: flex;
+  margin: 10px;
+  align-items: flex-end;
+  justify-content: space-between;
 }
-#highscore, #timer {
-    border: solid 2px purple;
-    border-radius: 5px;
-    margin: 5px;
-    padding: 5px;  
+#highscore,
+#timer {
+  border: solid 2px purple;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
 }
 .choice {
-    margin: 2px; 
+  margin: 2px;
 }
 
 .hide {
-    display: none; 
+  display: none;
 }
 #score-container {
-    border: solid 2px purple; 
-    /* display: flex; */
-    display: none; 
-    flex-direction: column;  
-    justify-content: center; 
-    align-items: center;
-    padding: 10px;
-    border-radius: 5px;   
+  border: solid 2px purple;
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
 }
 #clear {
-    margin: 5px; 
+  margin: 5px;
 }
 #score-title {
-    border-bottom: solid 1px purple; 
+  border-bottom: solid 1px purple;
 }

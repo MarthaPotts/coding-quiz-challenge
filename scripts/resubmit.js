@@ -4,7 +4,7 @@ let titleEl = document.querySelector("#title");
 let choicesEl = document.querySelector("#choices");
 let outro = document.querySelector("#outro");
 let timerId;
-let scorebox = document.querySelector("#score-container"); 
+let scorebox = document.querySelector("#score-container");
 
 let q = 0;
 
@@ -34,7 +34,7 @@ function displayQuestion() {
     choiceNode.onclick = answerClick;
   });
   if (questions.length == 0 || time == 0) {
-      stopQuiz(); 
+    stopQuiz();
   }
 }
 
@@ -74,8 +74,8 @@ function answerClick() {
 function stopQuiz() {
   clearInterval(timerId);
   display.setAttribute("class", "hide");
-  outro.style.display="flex";
-  display.style.display="none";  
+  outro.style.display = "flex";
+  display.style.display = "none";
 }
 
 function tickTock() {
@@ -83,68 +83,66 @@ function tickTock() {
   timeEl.innerHTML = time;
   if (time <= 0) {
     stopQuiz();
-  } else if (q === questions.length){
-    stopQuiz(); 
+  } else if (q === questions.length) {
+    stopQuiz();
   }
 }
 
-
-let finalScoreEl = document.querySelector("#finalScore"); 
-finalScoreEl.innerHTML = time; 
-initialsEl = document.querySelector("#initials"); 
-// let scorebox = document.querySelector("#score-container"); 
+let finalScoreEl = document.querySelector("#finalScore");
+finalScoreEl.innerHTML = time;
+initialsEl = document.querySelector("#initials");
+// let scorebox = document.querySelector("#score-container");
 
 function saveHighScore() {
-    let initials = initialsEl.value.trim();
+  let initials = initialsEl.value.trim();
 
-    if (initials !== "") {
-        let highscores = JSON.parse(window.localStorage.getItem("highscores")) || []; 
-         
-        let newScore = {
-            score: time, 
-            initials: initials
-        }; 
+  if (initials !== "") {
+    let highscores =
+      JSON.parse(window.localStorage.getItem("highscores")) || [];
 
-        highscores.push(newScore); 
-        window.localStorage.setItem("highscores", JSON.stringify(highscores)); 
-    
-        scorebox.style.display="flex";
-      
-    }
+    let newScore = {
+      score: time,
+      initials: initials,
+    };
+
+    highscores.push(newScore);
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
+    scorebox.style.display = "flex";
+  }
 }
 
 function checkForEnter(event) {
-    if (event.key === "Enter" ||  event.key === "13") {
-        saveHighScore(); 
-    }
+  if (event.key === "Enter" || event.key === "13") {
+    saveHighScore();
+  }
 }
-submitBtn = document.querySelector("#submit"); 
-submitBtn.addEventListener("click", saveHighScore); 
-initialsEl.addEventListener("keyup", checkForEnter); 
- 
+submitBtn = document.querySelector("#submit");
+submitBtn.addEventListener("click", saveHighScore);
+initialsEl.addEventListener("keyup", checkForEnter);
 
 function getHighScores() {
-    let highscores = JSON.parse(window.localStorage.getItem("highscores")); 
+  let highscores = JSON.parse(window.localStorage.getItem("highscores"));
 
-    highscores.sort( (a, b) => {
-        return b.score - a.score; 
-    }); 
+  highscores.sort((a, b) => {
+    return b.score - a.score;
+  });
 
-    highscores.forEach( (score) => {
-        let liTag = document.createElement("li"); 
-        liTag.innerHTML = score.initials + "-" + score.score; 
-        let list = document.querySelector("#highscores"); 
-        list.appendChild(liTag); 
-    }); 
+  highscores.forEach((score) => {
+    let liTag = document.createElement("li");
+    liTag.innerHTML = score.initials + "-" + score.score;
+    let list = document.querySelector("#highscores");
+    list.appendChild(liTag);
+  });
 }
 
 function clearScores() {
-    window.localStorage.removeItem("highscores"); 
-    // window.location.reload(); 
+  window.localStorage.removeItem("highscores");
+  // window.location.reload();
 }
-console.log(clearScores()); 
-let clear = document.querySelector("#clear"); 
-// clear.onclick = clearScores; 
-clear.addEventListener('click', clearScores);  
+console.log(clearScores());
+let clear = document.querySelector("#clear");
+// clear.onclick = clearScores;
+clear.addEventListener("click", clearScores);
 
-getHighScores(); 
+getHighScores();
