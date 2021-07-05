@@ -5,6 +5,7 @@ let choicesEl = document.querySelector("#choices");
 let outro = document.querySelector("#outro");
 let timerId;
 let scorebox = document.querySelector("#score-container");
+let finalScoreEl = document.querySelector("#finalScore");
 
 let q = 0;
 
@@ -40,9 +41,7 @@ function displayQuestion() {
 
 //5 questions = 60 seconds
 let time = questions.length * 12;
-// let timerId;
 let timeEl = document.querySelector("#time");
-// timerId = setInterval(tickTock, 1000);
 timeEl.innerHTML = time;
 let response = document.querySelector("#response");
 
@@ -65,13 +64,19 @@ function answerClick() {
 
   if (q == 5) {
     stopQuiz();
+    console.log(time);
+    // finalScoreEl.innerHTML = time;  
   } else {
     q++;
     displayQuestion();
+    console.log(time);
+    // finalScoreEl.innerHTML = time;  
   }
 }
 
 function stopQuiz() {
+  console.log(time);
+  finalScoreEl.innerHTML= time;  
   clearInterval(timerId);
   display.setAttribute("class", "hide");
   outro.style.display = "flex";
@@ -87,11 +92,10 @@ function tickTock() {
     stopQuiz();
   }
 }
-
-let finalScoreEl = document.querySelector("#finalScore");
-finalScoreEl.innerHTML = time;
+console.log(time);
+// let finalScoreEl = document.querySelector("#finalScore");
+// finalScoreEl.innerHTML = time;
 initialsEl = document.querySelector("#initials");
-// let scorebox = document.querySelector("#score-container");
 
 function saveHighScore() {
   let initials = initialsEl.value.trim();
@@ -107,7 +111,6 @@ function saveHighScore() {
 
     highscores.push(newScore);
     window.localStorage.setItem("highscores", JSON.stringify(highscores));
-
     scorebox.style.display = "flex";
   }
 }
@@ -138,11 +141,10 @@ function getHighScores() {
 
 function clearScores() {
   window.localStorage.removeItem("highscores");
-  // window.location.reload();
 }
-console.log(clearScores());
 let clear = document.querySelector("#clear");
-// clear.onclick = clearScores;
 clear.addEventListener("click", clearScores);
 
 getHighScores();
+console.log(time); 
+console.log(timerId); 
