@@ -4,16 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Highscores</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <title>HighScores</title>
+    <style>
+        #score-container {
+            border: solid 2px purple; 
+            display: flex;
+            flex-direction: column;  
+            justify-content: center; 
+            align-items: center;
+            padding: 10px;  
+        }
+        #clear {
+            margin: 5px; 
+        }
+        #h1 {
+            border-bottom: solid 1px purple; 
+        }
+    </style>
 </head>
 <body>
-    <div class="scoreDisplay">
-        <h1>Highscores</h1>
+    <div id="score-container">
+        <h1 id="h1">HighScores</h1>
         <ol id="highscores"></ol>
-        <a href="index.html"><button>Go Back</button></a>
-        <button id="clear">Clear Highscores</button>
+
+        <a href="index.html"><button>Go BacK</button></a>
+        <button id="clear" onclick="clearScores()">Clear HighScores</button>
     </div>
-    <script src="/scripts/scores.js"></script>
+    <!-- <script src="highscores.js"></script> -->
 </body>
 </html>

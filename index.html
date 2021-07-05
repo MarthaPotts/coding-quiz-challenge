@@ -9,21 +9,20 @@
   </head>
 <body>
   <div class="container">
-    <div id="highscore">Highscore: </div>
-    <div id="timer">Time: </div>
+    <div id="highscore" class="hide">Highscore: <span id="score"></span></div>
+    <div id="timer">Time: <span id=time>0</span></div>
   </div>
 
   <div id="intro">
-    <!-- <div id="highscore">Highscore: </div>
-    <div id="timer">Time: </div> -->
     <h1>Coding Quiz Challenge!</h1>
     <p id="display">Welcome to the Coding-Quiz-Challenge! Try to answer the following code-related questions within the time limit! Incorrect answers penalize your time by ten seconds!</p>
     <button id="start">Start</button>
   </div>
 
-  <div id="questionsDisplayBox" class="hide">
+  <div id="display-question" class="hide">
     <h2 id="title"></h2>
     <div id="choices" class="choices"></div>
+    <p id="response"></p>
   </div>
 
   <div id="outro" class="hide">
@@ -32,11 +31,20 @@
     <p>Enter intials: <input type="text" id="initials" max="3">
     <button id="submit">Submit</button></p>
   </div>
-  <div id="response" class="response"></div>
+ 
+  <div id="score-container" class="hide">
+    <h1 id =score-title>HighScores</h1>
+    <ol id="highscores"></ol>
+
+    <a href="index.html"><button>Go BacK</button></a>
+    <button id="clear" onclick="clearScores()">Clear HighScores</button>
+</div>
+<script src="highscores.js"></script>
   
 <script src="scripts/questions.js"></script>
-<script src="scripts/script.js"></script>
-<script src='scripts/scores.js'></script>
+<script src="scripts/resubmit.js"></script>
+
+
 
 </body>
 </html>
